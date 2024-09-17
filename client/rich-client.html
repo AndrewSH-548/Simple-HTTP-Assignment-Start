@@ -17,7 +17,8 @@
 
 <h2>View the "Current Time" Message</h2>
 
-<p>You do this!</p>
+<p><button id="btn-time">See current time with <kbd>/timeJSON</kbd></button></p>
+<div id="output-time">??:??:??</div>
 
 <hr>
 
@@ -46,12 +47,21 @@ const getJsonFetch = async (url, callback) => {
 const btnHello = document.querySelector("#btn-hello");
 const outputHello = document.querySelector("#output-hello");
 
+const btnTime = document.querySelector("#btn-time");
+const outputTime = document.querySelector("#output-time");
+
 const helloJSONURL = "/helloJSON";
 const helloCallback = json => {
   outputHello.innerHTML = json.message || "No <kbd>.message</kbd> value found!";
 };
 
+const timeJSONURL = "/timeJSON";
+const timeCallback = json => {
+  outputTime.innerHTML = json.message || "No <kbd>.message</kbd> value found!";
+};
+
 btnHello.onclick = () => getJsonFetch(helloJSONURL, helloCallback);
+btnTime.onclick = () => getJsonFetch(timeJSONURL, timeCallback);
 
 </script>
 </html>
