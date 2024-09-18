@@ -4,6 +4,7 @@ const textHandler = require('./textResponses');
 const jsonHandler = require('./jsonResponses');
 const imageHandler = require('./imageResponses');
 
+
 const port = process.env.PORT || process.env.NODE_PORT || 3000;
 
 const onRequest = (request, response) => {
